@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GraphComponent } from './components/graph/graph.component';
 import { ExGridComponent } from './components/ex-grid/ex-grid.component';
 // import * as $ from 'jquery';
-import * as $ from 'jquery';
+// import * as $ from 'jquery';
 @NgModule({
   declarations: [AppComponent, GraphComponent, ExGridComponent],
   imports: [

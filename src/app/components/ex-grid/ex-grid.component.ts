@@ -6,7 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { products } from 'src/app/products';
-
+declare var $: any;
 @Component({
   selector: 'app-ex-grid',
   templateUrl: './ex-grid.component.html',
@@ -20,6 +20,7 @@ export class ExGridComponent implements AfterViewInit {
   constructor(private elementRef: ElementRef) {}
 
   ngAfterViewInit() {
+    console.log(this.pivot.nativeElement);
     this.pivotGrid = $(this.pivot.nativeElement)
       .kendoPivotGrid({
         filterable: true,
@@ -64,7 +65,7 @@ export class ExGridComponent implements AfterViewInit {
       .data('kendoPivotGrid');
   }
 
-  // ngOnDestroy(): void {
-  //   $.destroy(this.elementRef.nativeElement);
-  // }
+  ngOnDestroy(): void {
+    $.destroy(this.elementRef.nativeElement);
+  }
 }
